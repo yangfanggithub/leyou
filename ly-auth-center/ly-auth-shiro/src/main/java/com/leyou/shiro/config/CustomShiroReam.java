@@ -51,7 +51,7 @@ public class CustomShiroReam extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         this.token=(String) authenticationToken.getPrincipal();
         //jwt做登陆验证
-        return new SimpleAuthenticationInfo(authenticationToken.getPrincipal(),authenticationToken.getPrincipal(),"customShiroReam");
+        return new SimpleAuthenticationInfo(authenticationToken.getPrincipal(),authenticationToken.getPrincipal(),this.getName());
     }
 
 }
