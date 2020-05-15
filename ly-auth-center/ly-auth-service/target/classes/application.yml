@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: auth-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://106.13.28.164:3306/leyou?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
 eureka:
   client:
     service-url:
@@ -15,3 +20,8 @@ ly:
     expire: 30 # 过期时间,单位分钟
     cookieName: LY_TOKEN
     cookieMaxAge: 1800
+logging:
+  level:
+    com:
+      leyou:
+        auth: DEBUG

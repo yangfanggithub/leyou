@@ -1,11 +1,12 @@
 package com.leyou.auth.entity;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+import tk.mybatis.mapper.annotation.KeySql;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 
@@ -15,14 +16,15 @@ import lombok.Data;
  * @date 2020-05-15 11:58:35
  */
 @Data
-@TableName("tb_permission")
+@Table(name = "tb_permission")
 public class PermissionEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 
 	 */
-	@TableId
+	@Id
+	@KeySql(useGeneratedKeys = true)
 	private Integer id;
 	/**
 	 * 权限id

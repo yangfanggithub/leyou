@@ -1,8 +1,8 @@
 package com.leyou.auth.dao;
 
-import com.leyou.auth.entity.RolePermissionEntity;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
+import com.leyou.auth.entity.RoleEntity;
+import tk.mybatis.mapper.additional.idlist.SelectByIdListMapper;
+import tk.mybatis.mapper.common.Mapper;
 
 /**
  * 
@@ -11,7 +11,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @email sunlightcs@gmail.com
  * @date 2020-05-15 11:58:35
  */
-@Mapper
-public interface RolePermissionDao extends BaseMapper<RolePermissionEntity> {
+public interface RolePermissionDao extends Mapper<RoleEntity>, SelectByIdListMapper<RoleEntity, Long> {
 	
 }
