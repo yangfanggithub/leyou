@@ -17,6 +17,23 @@
         <module>ly-auth-interfaces</module>
         <module>ly-auth-shiro</module>
     </modules>
-
+    <properties>
+        <mybatisplus-version>3.3.1</mybatisplus-version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.baomidou</groupId>
+                        <artifactId>mybatis-plus-generator</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
